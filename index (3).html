@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kritika Agrawal | Portfolio</title>
+  <style>
+    /* ── Reset & Base ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue:       #87CEEB;   /* sky blue */
+      --blue-dark:  #4BA3C7;   /* deeper accent */
+      --blue-light: #E8F6FC;   /* very light tint */
+      --white:      #ffffff;
+      --text:       #1a2a35;
+      --text-light: #4a6070;
+      --border:     #c8e8f5;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--blue);
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--blue-dark);
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul li a:hover {
+      color: var(--blue-dark);
+    }
+
+    /* ── Sections shared ── */
+    section {
+      padding: 70px 40px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    h2.section-title {
+      font-size: 1.6rem;
+      color: var(--blue-dark);
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 8px;
+      margin-bottom: 28px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Hero ── */
+    #home {
+      background: var(--blue-light);
+      max-width: 100%;
+      padding: 90px 40px;
+      text-align: center;
+      border-bottom: 3px solid var(--blue);
+    }
+
+    #home .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--blue);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--white);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    #home h1 {
+      font-size: 2.4rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    #home .title {
+      font-size: 1.1rem;
+      color: var(--blue-dark);
+      font-family: Arial, sans-serif;
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+
+    #home .tagline {
+      font-size: 1rem;
+      color: var(--text-light);
+      font-family: Arial, sans-serif;
+      max-width: 560px;
+      margin: 0 auto 24px;
+    }
+
+    #home .college {
+      display: inline-block;
+      background: var(--white);
+      border: 1.5px solid var(--blue);
+      color: var(--blue-dark);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    /* ── About ── */
+    #about p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .skill-card {
+      background: var(--blue-light);
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--blue-dark);
+      padding: 14px 22px;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      min-width: 180px;
+    }
+
+    .skill-card span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--blue-dark);
+      margin-top: 4px;
+    }
+
+    /* ── Certifications ── */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cert-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .cert-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      border: 2px solid var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .cert-info strong {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 0.97rem;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .cert-info span {
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    .cert-info .cert-date {
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: var(--blue-dark);
+      font-family: Arial, sans-serif;
+    }
+
+    /* ── Contact ── */
+    #contact {
+      background: var(--blue-light);
+      max-width: 100%;
+      border-top: 3px solid var(--blue);
+    }
+
+    #contact > div {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 0.97rem;
+    }
+
+    .contact-item .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: var(--blue-dark);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text);
+      color: var(--white);
+      text-align: center;
+      padding: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; }
+      nav ul { gap: 16px; }
+      #home { padding: 60px 20px; }
+      #home h1 { font-size: 1.8rem; }
+      section { padding: 50px 20px; }
+      .skills-grid { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Kritika Agrawal</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <div class="avatar">KA</div>
+    <h1>Kritika Agrawal</h1>
+    <p class="title">First Year ENTC Engineering Student</p>
+    <p class="tagline">
+      Aspiring Electronics &amp; Telecommunication Engineer | Learning Python and Technology
+    </p>
+    <span class="college">&#127968; MIT Academy of Engineering, India</span>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      Hi! I'm Kritika Agrawal, a first-year Electronics and Telecommunication Engineering (ENTC)
+      student at MIT Academy of Engineering (MITAOE), India. I have a keen interest in technology,
+      coding, and innovation. Currently, I am building a strong foundation in programming with
+      Python and exploring how technology can be applied to solve real-world problems.
+      I enjoy learning new skills, completing online courses, and working towards becoming a
+      well-rounded engineer. My goal is to grow both technically and professionally throughout
+      my engineering journey.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        Python
+        <span>Beginner / Intermediate</span>
+      </div>
+      <div class="skill-card">
+        Communication Skills
+        <span>Professional</span>
+      </div>
+      <div class="skill-card">
+        Problem Solving
+        <span>Analytical Thinking</span>
+      </div>
+      <div class="skill-card">
+        JavaScript
+        <span>Beginner (IBM Certified)</span>
+      </div>
+      <div class="skill-card">
+        AI Fluency
+        <span>Anthropic Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-list">
+
+      <div class="cert-card">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-info">
+          <strong>Learn JavaScript | Codecademy</strong>
+          <span>IBM SkillsBuild &nbsp;·&nbsp; Completion Certificate &nbsp;·&nbsp; 30 hrs</span>
+          <p class="cert-date">Completed: 18 March 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-info">
+          <strong>Career Management Essentials</strong>
+          <span>IBM SkillsBuild &nbsp;·&nbsp; Credential via Credly</span>
+          <p class="cert-date">Issued: 18 March 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-info">
+          <strong>AI Fluency for Students</strong>
+          <span>Anthropic &nbsp;·&nbsp; UCC · Ringling College of Art + Design · HEA · National Forum</span>
+          <p class="cert-date">Certificate of Completion</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-info">
+          <strong>AI Fluency for Nonprofits</strong>
+          <span>Anthropic &nbsp;·&nbsp; GivingTuesday</span>
+          <p class="cert-date">Certificate of Completion</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-info">
+          <strong>AI Fluency: Framework &amp; Foundations</strong>
+          <span>Anthropic &nbsp;·&nbsp; UCC · Ringling College of Art + Design · HEA · National Forum</span>
+          <p class="cert-date">Certificate of Completion</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-info">
+          <strong>Claude 101</strong>
+          <span>Anthropic</span>
+          <p class="cert-date">Certificate of Completion</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-links">
+        <div class="contact-item">
+          <div class="icon">💼</div>
+          <div>
+            <strong>LinkedIn</strong><br>
+            <a href="https://www.linkedin.com/in/kritika-agrawal-53a258391" target="_blank">
+              linkedin.com/in/kritika-agrawal-53a258391
+            </a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">✉️</div>
+          <div>
+            <strong>Email</strong><br>
+            <a href="mailto:knagrawal07@gmail.com">knagrawal07@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">📍</div>
+          <div>
+            <strong>Location</strong><br>
+            India
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Kritika Agrawal &nbsp;·&nbsp; MIT Academy of Engineering &nbsp;·&nbsp; ENTC First Year
+  </footer>
+
+</body>
+</html>
